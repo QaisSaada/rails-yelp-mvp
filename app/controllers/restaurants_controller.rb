@@ -9,6 +9,8 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1 or /restaurants/1.json
   def show
+    @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
   end
 
   # GET /restaurants/new
@@ -16,9 +18,10 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
   end
 
-  # GET /restaurants/1/edit
   def edit
   end
+
+  
 
   # POST /restaurants or /restaurants.json
   def create
@@ -66,6 +69,6 @@ class RestaurantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :adress, :phone_number, :category)
+      params.require(:restaurant).permit(:name, :address, :phone_number, :category)
     end
 end
