@@ -6,16 +6,26 @@
   <% @restaurant.reviews.each do |review| %>
     <li class="list-group-item">
       <%= review.content %>
+      <%= review.rating %>
+      <%= "stars" %>
     </li>
   <% end %>
 </ul>
-<%= link_to "Create new review", new_restaurant_review_path(@restaurant) %>
+    <br>
+
+<%= link_to "Create new review", new_restaurant_review_path(@restaurant), class: "btn btn-warning" %>
+  <br>
+      <br>
+
+
 
 <div>
-  <%= link_to 'Reviews', new_restaurant_review_path(@restaurant) %> |
-  <%= link_to "Back to restaurants", restaurants_path %>
+  <%= link_to "Back to restaurants", restaurants_path, class: "btn btn-warning" %>
+  <br>
+    <br>
 
-  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+
+  <%= button_to "Destroy this restaurant", @restaurant, method: :delete, class: "btn btn-warning" %>
 </div>
 
 

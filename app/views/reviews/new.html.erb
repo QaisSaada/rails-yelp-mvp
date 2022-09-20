@@ -1,6 +1,8 @@
-<h1>New review</h1>
+<img src="https://img.freepik.com/premium-vector/five-stars-customer-product-rating-review_172533-7.jpg?w=360" class="img-fluid" alt="...">
 <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.input :content %>
   <%= f.input :rating %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <br>
+  <%= f.submit "Submit review", class: "btn btn-warning" %>
 <% end %>
+
